@@ -1,8 +1,8 @@
 {
-    "name": "lechpat/Wworkflow",
+    "name": "lechpat/workflow",
     "description": "Workflow plugin for CakePHP",
     "type": "cakephp-plugin",
-    "homepage": "https://github.com/lechpat/CakeOffice",
+    "homepage": "https://github.com/lechpat/Workflow",
     "license": "MIT",
     "authors": [
         {
