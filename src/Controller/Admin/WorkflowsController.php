@@ -2,6 +2,7 @@
 namespace Workflow\Controller\Admin;
 
 use Workflow\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Workflows Controller
@@ -18,7 +19,6 @@ class WorkflowsController extends AppController
      */
     public function index()
     {
-        \Cake\Core\Configure::write('debug',true);
         $this->set('workflows', $this->paginate($this->Workflows));
         $this->set('_serialize', ['workflows']);
     }
@@ -81,7 +81,8 @@ class WorkflowsController extends AppController
                 $this->Flash->error(__('The workflow could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('workflow'));
+        $activities = TableRegistry::get('Workflow.Activities')->find('all');
+        $this->set(compact('workflow','activities'));
         $this->set('_serialize', ['workflow']);
     }
 
